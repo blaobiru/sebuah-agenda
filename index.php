@@ -1,5 +1,7 @@
 <?php
 require 'fungsi.php';
+query("SELECT * FROM user");
+
 ?>
 
 <!DOCTYPE html>
