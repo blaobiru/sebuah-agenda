@@ -1,7 +1,8 @@
 <?php
+
 $conn = mysqli_connect("localhost", "root", "", "agenda");  
 
-function query($query){
+function query ($query){
     global $conn; 
     $result = mysqli_query($conn, $query);
     $rows = [];
@@ -10,7 +11,5 @@ function query($query){
     } 
     return $rows;
 }
-
-
 
 ?>

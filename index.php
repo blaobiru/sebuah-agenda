@@ -1,7 +1,7 @@
 <?php
 require 'fungsi.php';
-query("SELECT * FROM user");
-
+$query = "SELECT * FROM info";
+$result;
 ?>
 
 <!DOCTYPE html>
@@ -17,12 +17,20 @@ query("SELECT * FROM user");
 
         <tr>
             <th>Mod</th>
-            <th>Tanggal</th>
-            <th>Bulan</th>
-            <th>Tahun</th>
-            <th>Ket.</th>
+            <th>mulai</th>
+            <th>kelar</th>
+            <th>ket.</th>
         </tr>
-
+        <?php
+        while ($rows) {?>
+            <tr>
+                <td><?php echo $row['title']; ?></td>
+                <td><?php echo $row['keterangan']; ?></td>
+                <td><?php echo $row['start_event']; ?></td>
+                <td><?php echo $row['end_event']; ?></td>
+            </tr>
+            <?php }
+        ?>
     </table>
 </body>
 </html>
