@@ -1,15 +1,17 @@
 <?php
 
-$conn = mysqli_connect("localhost", "root", "", "agenda");  
+$server = "localhost";
+$username = "root";
+$password = "";
+$db = "agenda";
 
-function query ($query){
-    global $conn; 
-    $result = mysqli_query($conn, $query);
-    $rows = [];
-    while( $row = mysqli_fetch_assoc($result) ){
-        $rows[] = $row;
-    } 
-    return $rows;
+$conn = mysqli_connect($server, $username, $password, $db);
+
+if (!$conn){
+    die("koneksi gagal" . myqsli_connect_error());
 }
+
+$query = "SELECT * FROM info";
+$result = mysqli_query($conn, $query);
 
 ?>
